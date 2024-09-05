@@ -9,11 +9,16 @@
 #ifndef CARD_H
 #define CARD_H
 
+#include <map>
+
+using namespace std;
+
 class Card{
 
 	private:
 		char rank;
 		char suit;
+		map<char, int> values;
 
 	public:
 		Card();

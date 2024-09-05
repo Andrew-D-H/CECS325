@@ -16,21 +16,23 @@ Card::Card(){};
 Card::Card(char suit, char rank){
     Card::suit = suit;
     Card::rank = rank;
+	values = {{'A',1}, {'2',2}, {'3',3}, {'4',4}, {'5',5}, {'6',6}, {'7',7}, {'8',8}, {'9',9}, {'T',10}, {'J',11}, {'Q',12}, {'K',13}};
 }
 
 void Card::print(){
     if (rank == 'T') {
-        cout << "10" << suit;
+        cout << 10 << suit;
     } else {
         cout << rank << suit;
     }
 }
 
 int Card::compare(Card opponentCard){
-	if(rank > opponentCard.rank)
+	if (values[rank] > values[opponentCard.rank]) {
 		return 1;
-	else if (rank == opponentCard.rank)
+	} else if (values[rank] == values[opponentCard.rank]) {
 		return 0;
-	else
+	} else {
 		return -1;
+	}
 }

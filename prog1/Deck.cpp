@@ -13,14 +13,13 @@
 using namespace std;
 
 Deck::Deck() {
-	char suits[] = {'S', 'H', 'D', 'C'};
-	char ranks[] = {'A', '2', '3', '4', '5', '6', '7',
-                  '8', '9', 'T', 'J', 'Q', 'K'};
+	char suits[] = {'C', 'S', 'D', 'H'};
+	char ranks[] = {'A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K'};
 
 	int index = 0;
 	for (char suit : suits){
 		for (char rank : ranks) {
-			deck[index] = Card(rank, suit);
+			deck[index] = Card(suit	, rank);
 			++index;
 		}
 	}
@@ -38,6 +37,7 @@ Card Deck::deal(){
 }
 
 void Deck::shuffle(){
+	srand(time(0));
     for(int i = 0; i < 52; i++){
         int x = rand() % 52;
         int y = rand() % 52;
