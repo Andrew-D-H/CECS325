@@ -11,5 +11,7 @@
 #include <string>
 
 int main(){
+	Deck myDeck;
+	myDeck.print();
 	return 0;
 }
