@@ -6,10 +6,18 @@
 // I certify that this program is my own original work. I did not copy any part of this program from
 // any other source. I further certify that I typed each and every line of code in this program.
 
-#include "Deck.h"
-#include <iostream>
-#include <string>
+#ifndef DECK_H
+#define DECK_H
+#include "Card.h"
 
-int main(){
-	return 0;
-}
+class Deck{
+	private:
+		Card deck[52];
+		int numCards;
+	public:
+		Deck(); 
+		Card deal(); 
+		void print();
+		void shuffle();
+};
+#endif

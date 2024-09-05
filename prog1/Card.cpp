@@ -11,12 +11,14 @@
 
 using namespace std;
 
-Card::Card(char suit, char rank) {
+Card::Card(){};
+
+Card::Card(char suit, char rank){
     Card::suit = suit;
     Card::rank = rank;
 }
 
-void Card::print() {
+void Card::print(){
     if (rank == 'T') {
         cout << "10" << suit;
     } else {
@@ -24,7 +26,7 @@ void Card::print() {
     }
 }
 
-int Card::compare(Card opponentCard) {
+int Card::compare(Card opponentCard){
 	if(rank > opponentCard.rank)
 		return 1;
 	else if (rank == opponentCard.rank)

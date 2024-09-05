@@ -9,17 +9,17 @@
 #ifndef CARD_H
 #define CARD_H
 
-class Card 
-{
+class Card{
 
-  private:
-    char rank;
-    char suit;
+	private:
+		char rank;
+		char suit;
 
-  public:
-    Card(char, char);
-    void print();
-    int compare(Card);
+	public:
+		Card();
+		Card(char, char);
+		void print();
+		int compare(Card);
 
 };
 
