@@ -49,21 +49,96 @@ class Deck {
 	public:	
 	
 		Deck(){
-			for(char suit: {'C', 'S', 'D', 'H'})
+			for(char suit: {'C', 'S', 'D', 'H'}){
 				for(char rank: {'A','2', '3', '4', '5','6','7','8','9','T','J','Q','K'})
-					decks.emplace_back(suit, rank)
+					deck.emplace_back(suit, rank);
+			}
 		}
 			
 		Card deal(){
-			Card card = deck.pop_back();
+			if(isEmpty()) throw "Deck is empty";
+			Card card = deck.back();
+			deck.pop_back();
 			return card;
 		}
 		
 		void print(){
-			
+			for(int i 	= 0; i < deck.size(); i++){
+				deck[i].print();
+				if((i+1) % 13)
+					cout << ",";
+				else
+					cout << endl;
+			}
+			cout << endl;
+		}
+		
+		void shuffle(){
+			srand(time(nullptr));
+			vector<Card> newDeck;
+			for(int i = deck.size(); i > 0; i--){
+				int randomValue = rand() % i;
+				newDeck.push_back(deck[randomValue]);
+				deck.erase(deck.begin() + randomValue);
+			}
+			deck = newDeck;
+		}
+		
+		bool isEmpty(){
+			if(deck.empty())
+				return true;
+			return false;
 		}
 };
 		
 int main(){
+	Deck myDeck;
+	int ties = 0;
+	int player1Wins = 0;
+	int player2Wins = 0;
+	int numOfGames;
+	string player1Name;
+	string player2Name;
+	cout << "Enter the name of the first player: ";
+	cin >> player1Name;
+	cout << "Enter the name of the second player: ";
+	cin >> player2Name;
+	cout << "How many games will they play?";
+	cin >> numOfGames;
+	cout << "\n Original Deck" << endl;
+	myDeck.print();
+	cout << endl;
+	myDeck.shuffle();
+	cout <<"\n Shuffled Deck" << endl;
+	myDeck.print();
+	for (int i = 1; i <= numOfGames; i++) {
+        try {
+			Card player1Card = myDeck.deal();
+			Card player2Card = myDeck.deal();
+			cout << endl;
+			cout << "Game " << i + 1 << endl;
+			cout << "--------\n";
+			cout << "\t" << player1Name << "=>";
+			player1Card.print();
+			cout << "\n\t" << player2Name << "=>";
+			player2Card.print();
+			int result = player1Card.compare(player2Card);
+			if(!result){
+				cout << "\nTie game\n";
+				ties++;
+			}
+			else if(result == 1){
+				cout << "\n" << player1Name << "=> Winner" << endl;
+				player1Wins++;
+			}
+			else {
+				cout << "\n" << player2Name << "=> Winner" << endl;
+				player2Wins++;
+			}
+        } catch (const char* error) {
+            cout << "Error - " << error << endl;
+            break;
+        }
+    }
 	return 0;
 }
