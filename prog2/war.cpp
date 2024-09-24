@@ -103,7 +103,7 @@ int main(){
 	cin >> player1Name;
 	cout << "Enter the name of the second player: ";
 	cin >> player2Name;
-	cout << "How many games will they play?";
+	cout << "How many games will they play? ";
 	cin >> numOfGames;
 	cout << "\n Original Deck" << endl;
 	myDeck.print();
@@ -111,7 +111,7 @@ int main(){
 	myDeck.shuffle();
 	cout <<"\n Shuffled Deck" << endl;
 	myDeck.print();
-	for (int i = 1; i <= numOfGames; i++) {
+	for (int i = 0; i <= numOfGames; i++) {
         try {
 			Card player1Card = myDeck.deal();
 			Card player2Card = myDeck.deal();
@@ -140,5 +140,11 @@ int main(){
             break;
         }
     }
+	cout << "------Final Stats-------" << endl;
+    cout << "\t" << player1Name << "\t vs. \t" << player2Name << endl;
+    cout << "Wins" << "\t" << player1Wins << "\t\t" << player2Wins << endl;
+    cout << "Losses" << "\t" << player2Wins << "\t\t" << player1Wins << endl;
+    cout << "Ties" << "\t" << ties <<"\t\t" << ties << endl;
+	return 0;
 	return 0;
 }
