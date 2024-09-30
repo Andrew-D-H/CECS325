@@ -14,7 +14,7 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
     if (argc != 4) {
-        cout << "Program did not provide 3 arguements" << endl;
+        cout << "Program did not provide 3 arguments" << endl;
         return 0;
     }
     srand(time(nullptr));

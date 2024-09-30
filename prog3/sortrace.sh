@@ -1,4 +1,4 @@
-# This file is called sortrace.sh
+	# This file is called sortrace.sh
 # It must have execute privilege set to run
 # run it as a background task like this: (see the 2 lines below)
 #----------------------------------------------------------------------------------------------
@@ -8,7 +8,7 @@
 #
 echo Generating 1000000 random numbers
 sleep 1
-generate 1000000 -100000 100000 # you have to write generate.cpp
+./generate 1000000 -100000 100000 # you have to write generate.cpp
 sleep 1
 echo Starting system sort
 sleep 1
