@@ -5,3 +5,8 @@ real	0m0.277s
 user	0m0.804s
 sys	0m0.136s
 Starting mysort
+
+real	68m50.676s
+user	52m36.604s
+sys	0m1.762s
+1000000 1000000 6388687 mysort.out
