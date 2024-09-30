@@ -1,6 +1,6 @@
 // Andrew Hua
 // CECS 325-01
-// Prog 1 – One Card War
+// Prog 3 – Sort Contest
 // Due 10/14/2024
 //
 // I certify that this program is my own original work. I did not copy any part of this program from
