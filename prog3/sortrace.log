@@ -1,12 +1,12 @@
 Generating 1000000 random numbers
 Starting system sort
 
-real	0m0.277s
-user	0m0.804s
-sys	0m0.136s
+real	0m0.256s
+user	0m0.735s
+sys	0m0.179s
 Starting mysort
 
-real	68m50.676s
-user	52m36.604s
-sys	0m1.762s
-1000000 1000000 6388687 mysort.out
+real	43m7.895s
+user	43m6.032s
+sys	0m1.840s
+1000000 1000000 6389020 mysort.out
